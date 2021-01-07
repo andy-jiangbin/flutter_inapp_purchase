@@ -411,6 +411,8 @@ public class AndroidInappPurchasePlugin implements MethodCallHandler,  Applicati
             builder.setReplaceSkusProrationMode(BillingFlowParams.ProrationMode.IMMEDIATE_AND_CHARGE_PRORATED_PRICE);
           } else if (prorationMode == BillingFlowParams.ProrationMode.IMMEDIATE_WITHOUT_PRORATION) {
             builder.setReplaceSkusProrationMode(BillingFlowParams.ProrationMode.IMMEDIATE_WITHOUT_PRORATION);
+          }  else if (prorationMode == BillingFlowParams.ProrationMode.DEFERRED) {
+            builder.setReplaceSkusProrationMode(BillingFlowParams.ProrationMode.DEFERRED);
           } else {
             builder.setOldSku(oldSku, purchaseToken);
           }
