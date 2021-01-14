@@ -225,7 +225,6 @@ class FlutterInappPurchase {
     String obfuscatedAccountIdAndroid,
     String obfuscatedProfileIdAndroid,
     String purchaseTokenAndroid,
-    String applicationUsername,
   }) async {
     if (_platform.isAndroid) {
       return await _channel.invokeMethod('buyItemByType', <String, dynamic>{
@@ -241,7 +240,6 @@ class FlutterInappPurchase {
       return await _channel.invokeMethod(
         'buyProduct', <String, dynamic>{
         'sku': sku,
-        'applicationUsername':applicationUsername
       });
     }
     throw PlatformException(
@@ -261,6 +259,7 @@ class FlutterInappPurchase {
         String obfuscatedAccountIdAndroid,
         String obfuscatedProfileIdAndroid,
         String purchaseTokenAndroid,
+        String applicationUsername,
       }) async {
     if (_platform.isAndroid) {
       return await _channel
@@ -277,6 +276,7 @@ class FlutterInappPurchase {
       return await _channel.invokeMethod(
         'buyProduct', <String, dynamic>{
         'sku': sku,
+        'applicationUsername':applicationUsername
       });
     }
     throw PlatformException(
